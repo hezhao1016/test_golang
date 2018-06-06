@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"strings"
+)
+
 // 数据类型
 
 /*
@@ -41,11 +46,6 @@ Go 语言按类别有以下几种数据类型：
 	(h) Map 类型
 */
 
-import (
-	"fmt"
-	"strings"
-)
-
 var isActive bool  // 全局变量声明
 var enabled, disabled = true, false  // 忽略类型的声明
 
@@ -61,7 +61,7 @@ func main() {
 	fmt.Println(valid)
 
 	// 数字
-	var a = 2
+	var a = 2  // 根据值自行判定变量类型。
 	var b = 1.5
 	var c float32 = 1.5  // 指定变量类型为float
 
