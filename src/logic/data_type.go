@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"strings"
+	"strconv"
 )
 
 // 数据类型
@@ -71,14 +71,55 @@ func main() {
 	fmt.Println(b)
 	fmt.Println(c)
 
-	// 字符串去除空格和换行符
-	str := "这里是 www\n.runoob\n.com"
-	fmt.Println("-------- 原字符串 ----------")
-	fmt.Println(str)
-	// 去除空格
-	str = strings.Replace(str, " ", "", -1)
-	// 去除换行符
-	str = strings.Replace(str, "\n", "", -1)
-	fmt.Println("-------- 去除空格与换行后 ----------")
-	fmt.Println(str)
+
+	// 类型转换, 注意：int 不能直接赋值给float
+	fmt.Println("------------------------------------------")
+	var i int = 42
+	var f float64 = float64(i)
+	var u uint = uint(f)
+	fmt.Println(i, f, u)
+
+	// ------- string、int、int64互相转换 ------
+	fmt.Println("------------------------------------------")
+	str := "123"
+
+	//string到int
+	int,err:=strconv.Atoi(str)
+	fmt.Println(int, err)
+
+	//string到int64
+	int64,err := strconv.ParseInt(str, 10, 64)
+	fmt.Println(int64, err)
+
+	//int到string
+	str = strconv.Itoa(int)
+	fmt.Println(str, err)
+
+	//int64到string
+	str = strconv.FormatInt(int64,10)
+	fmt.Println(str, err)
+
+	//string到float32
+	str = "123.456"
+	float32,err := strconv.ParseFloat(str,32)
+	fmt.Println(float32, err)
+
+	//string到float64
+	float64,err := strconv.ParseFloat(str,64)
+	fmt.Println(float64, err)
+
+	//float到string
+	str = strconv.FormatFloat(float32, 'E', -1, 32)
+	fmt.Println(str, err)
+
+	str = strconv.FormatFloat(float64, 'E', -1, 64)
+	fmt.Println(str, err)
+	// 'b' (-ddddp±ddd，二进制指数)
+	// 'e' (-d.dddde±dd，十进制指数)
+	// 'E' (-d.ddddE±dd，十进制指数)
+	// 'f' (-ddd.dddd，没有指数)
+	// 'g' ('e':大指数，'f':其它情况)
+	// 'G' ('E':大指数，'f':其它情况)
+
+
 }
