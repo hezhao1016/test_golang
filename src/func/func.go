@@ -1,4 +1,4 @@
-package _func
+package main
 
 import (
 	"fmt"
@@ -77,7 +77,7 @@ func swap(x, y int) {
 // 引用传递, *int 指针，指向整型
 func swapRef(x *int, y *int) {
 	// 交换值
-	x, y = y, x
+	*x, *y = *y, *x
 }
 
 // ----------> 函数用法

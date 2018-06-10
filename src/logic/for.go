@@ -15,8 +15,6 @@ func main() {
 	// 	newMap[key] = value
 	// }
 
-	numbers := [6]int{1, 2, 3, 5}
-
 	/* 1.类似于Java for 循环 */
 	fmt.Println("-----------------------类似于Java for 循环------------------------")
 	for i := 0; i < 10; i++ {
@@ -30,6 +28,8 @@ func main() {
 		n++
 		fmt.Printf("n 的值为: %d\n", n)
 	}
+
+	numbers := [6]int{1, 2, 3, 5}
 
 	/* 3.类似于Python for 循环, 用于遍历集合 */
 	fmt.Println("-----------------------for range------------------------")

@@ -11,7 +11,11 @@ import "fmt"
 
 func main() {
 	// 声明数组
-	var balance [10] float32
+	var balance [10]float32
+	
+	// 赋值
+	// 通过大括号来初始化
+	balance = [10]float32{1000.0}
 	fmt.Println(balance)
 
 	// 初始化数组
@@ -33,7 +37,7 @@ func main() {
 	fmt.Println(salary)
 
 
-	var n [10] int
+	var n [10]int
 	fmt.Println("---------------遍历数组------------------")
 
 	/* 为数组 n 初始化元素 */
@@ -48,10 +52,50 @@ func main() {
 
 	fmt.Println("---------------数组长度------------------")
 	// 数组长度
-	len := len(n)
-	fmt.Println(len)
+	length := len(n)
+	fmt.Println(length)
 
 
 	// 多维数组
-	
+	fmt.Println("---------------多维数组------------------")
+
+	var twoArr = [5][2]int{
+		{0,0},
+		{1,2},
+		{2,4},
+		{3,6},
+		{4,8}}
+
+	/* 输出数组元素 */
+	for  i := 0; i < len(twoArr); i++ {
+		for j := 0; j < 2; j++ {
+			fmt.Printf("a[%d][%d] = %d\n", i,j, twoArr[i][j] )
+		}
+	}
+
+	fmt.Println("---------------函数参数------------------")
+	/* 数组长度为 5 */
+	var balance2 = []int {1000, 2, 3, 17, 50}
+	var avg float32
+
+	/* 数组作为参数传递给函数 */
+	avg = getAverage( balance2)
+
+	/* 输出返回的平均值 */
+	fmt.Printf( "平均值为: %f ", avg )
+}
+
+// 向函数传递数组参数, 可规定数组大小, arr [5]int
+func getAverage(arr []int) float32 {
+	var i,sum int
+	var avg float32
+	var size = len(arr)
+
+	for i = 0; i < size; i++ {
+		sum += arr[i]
+	}
+
+	avg = float32(sum) / float32(size)
+
+	return avg
 }
