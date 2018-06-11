@@ -126,7 +126,8 @@ func main() {
 	fmt.Printf( "最大值是 : %d\n", max(100, 200))
 
 	// 返回多个值
-	fmt.Println(sum(2, 3))
+	num1, num2 := sum(2, 3)
+	fmt.Println(num1, num2)
 
 	// 可变参数
 	fmt.Println(maxNumber(1, 9, 6, 12, 34, 5))
